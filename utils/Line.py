@@ -1,6 +1,7 @@
 from utils.Point import Point
 from math import sqrt
 from utils.Vector import Vector
+from utils.Direction import Direction
 
 class Line:
     def __init__(self, p1:Point, p2:Point):
@@ -47,11 +48,11 @@ class Line:
         cross_product = ab.cross_product(ac)
 
         if cross_product > 0:
-            position = "left"
+            position = Direction.LEFT.value
         elif cross_product < 0:
-            position = "right"
+            position = Direction.RIGHT.value
         else:
-            position = "collinear"
+            position = Direction.CONTINUE.value
 
 
         return dist <= radius, position
